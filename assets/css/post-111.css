@@ -277,7 +277,13 @@
     font-size: 2em;
     font-weight: 600;
     line-height: 1.2em;
-    color: #FFFFFF;
+    color: #000000;
+}
+
+/* Deixa o trecho amarelo com contorno preto (destaque) */
+.elementor-111 .elementor-element.elementor-element-6c5589db .elementor-heading-title span {
+    -webkit-text-stroke: 2px #000000;
+    paint-order: stroke fill;
 }
 
 .elementor-111 .elementor-element.elementor-element-75fe34f4 {
