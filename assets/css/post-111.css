@@ -4278,12 +4278,6 @@ body {
 }
 
 /* End custom CSS */
-
-/* Remove completamente a seção branca de preços (headline + cards) */
-.elementor-111 .elementor-element.elementor-element-1126431f,
-.elementor-111 .elementor-element.elementor-element-75fe34f4 {
-    display: none !important;
-}
 /* Start custom CSS for heading, class: .elementor-element-f6c221b */
 .elementor-111 .elementor-element.elementor-element-f6c221b .elementor-heading-title.elementor-size-default {
 
@@ -4714,103 +4708,6 @@ body {
 }
 
 /* End custom CSS */
-@media (max-width: 767px) {
-    /* Mantem os cards legiveis no mobile */
-    .elementor-111 .elementor-element.elementor-element-1126431f {
-        --padding-top: 12px;
-        --padding-bottom: 10px;
-        --padding-left: 0px;
-        --padding-right: 0px;
-        align-items: stretch !important;
-    }
-
-    .elementor-111 .elementor-element.elementor-element-6c5589db {
-        margin: 0 !important;
-    }
-
-    .elementor-111 .elementor-element.elementor-element-6c5589db .elementor-heading-title {
-        margin: 0 !important;
-        line-height: 1.12em;
-    }
-
-    .elementor-111 .elementor-element.elementor-element-75fe34f4 > .e-con-inner,
-    .elementor-111 .elementor-element.elementor-element-1126431f > .e-con-inner {
-        max-width: 100% !important;
-    }
-
-    .elementor-111 .elementor-element.elementor-element-75fe34f4 {
-        --padding-left: 0px !important;
-        --padding-right: 0px !important;
-        overflow-x: hidden !important;
-    }
-
-    .elementor-111 .elementor-element.elementor-element-1126431f > .e-con-inner {
-        width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-
-    .elementor-111 .elementor-element.elementor-element-6c5589db {
-        width: 100% !important;
-        max-width: 100% !important;
-        --container-widget-width: 100% !important;
-        --align-self: stretch !important;
-        padding-left: 16px !important;
-        padding-right: 16px !important;
-    }
-
-    .elementor-111 .elementor-element.elementor-element-768b70a {
-        --e-con-grid-template-columns: repeat(1, minmax(0, 1fr));
-        --grid-auto-flow: row;
-        display: flex !important;
-        flex-direction: column !important;
-        grid-template-columns: 1fr !important;
-        gap: 18px !important;
-        width: 100% !important;
-    }
-
-    .elementor-111 .elementor-element.elementor-element-c834829,
-    .elementor-111 .elementor-element.elementor-element-885e21f,
-    .elementor-111 .elementor-element.elementor-element-fa1fe44 {
-        width: 100% !important;
-        max-width: 360px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        transform: none !important;
-    }
-
-    .elementor-111 .elementor-element.elementor-element-c834829 .elementor-heading-title,
-    .elementor-111 .elementor-element.elementor-element-885e21f .elementor-heading-title,
-    .elementor-111 .elementor-element.elementor-element-fa1fe44 .elementor-heading-title {
-        word-break: normal;
-    }
-
-    /* Corrige alinhamento dos icones/check nos beneficios */
-    .elementor-111 .elementor-element.elementor-element-028376f .elementor-icon-list-item,
-    .elementor-111 .elementor-element.elementor-element-26973d3 .elementor-icon-list-item,
-    .elementor-111 .elementor-element.elementor-element-471c588 .elementor-icon-list-item {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 8px;
-    }
-
-    .elementor-111 .elementor-element.elementor-element-028376f .elementor-icon-list-icon,
-    .elementor-111 .elementor-element.elementor-element-26973d3 .elementor-icon-list-icon,
-    .elementor-111 .elementor-element.elementor-element-471c588 .elementor-icon-list-icon {
-        flex: 0 0 auto;
-        line-height: 1;
-    }
-
-    .elementor-111 .elementor-element.elementor-element-028376f .elementor-icon-list-text,
-    .elementor-111 .elementor-element.elementor-element-26973d3 .elementor-icon-list-text,
-    .elementor-111 .elementor-element.elementor-element-471c588 .elementor-icon-list-text {
-        display: inline-block;
-    }
-}
-
 /* Start custom CSS for container, class: .elementor-element-386d1bf4 */
 .bloqueio-direito {
     user-select: none;
