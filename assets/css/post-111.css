@@ -4715,6 +4715,7 @@ body {
         --padding-bottom: 10px;
         --padding-left: 0px;
         --padding-right: 0px;
+        align-items: stretch !important;
     }
 
     .elementor-111 .elementor-element.elementor-element-6c5589db {
@@ -4740,6 +4741,10 @@ body {
     }
 
     .elementor-111 .elementor-element.elementor-element-6c5589db {
+        width: 100% !important;
+        max-width: 100% !important;
+        --container-widget-width: 100% !important;
+        --align-self: stretch !important;
         padding-left: 16px !important;
         padding-right: 16px !important;
     }
