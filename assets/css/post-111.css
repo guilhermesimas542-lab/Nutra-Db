@@ -4713,8 +4713,8 @@ body {
     .elementor-111 .elementor-element.elementor-element-1126431f {
         --padding-top: 12px;
         --padding-bottom: 10px;
-        --padding-left: 12px;
-        --padding-right: 12px;
+        --padding-left: 0px;
+        --padding-right: 0px;
     }
 
     .elementor-111 .elementor-element.elementor-element-6c5589db {
@@ -4729,6 +4729,19 @@ body {
     .elementor-111 .elementor-element.elementor-element-75fe34f4 > .e-con-inner,
     .elementor-111 .elementor-element.elementor-element-1126431f > .e-con-inner {
         max-width: 100% !important;
+    }
+
+    .elementor-111 .elementor-element.elementor-element-1126431f > .e-con-inner {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .elementor-111 .elementor-element.elementor-element-6c5589db {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
     }
 
     .elementor-111 .elementor-element.elementor-element-768b70a {
