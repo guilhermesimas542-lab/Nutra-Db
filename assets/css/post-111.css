@@ -4732,6 +4732,12 @@ body {
         max-width: 100% !important;
     }
 
+    .elementor-111 .elementor-element.elementor-element-75fe34f4 {
+        --padding-left: 0px !important;
+        --padding-right: 0px !important;
+        overflow-x: hidden !important;
+    }
+
     .elementor-111 .elementor-element.elementor-element-1126431f > .e-con-inner {
         width: 100% !important;
         margin-left: 0 !important;
