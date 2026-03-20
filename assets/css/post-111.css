@@ -4708,6 +4708,22 @@ body {
 }
 
 /* End custom CSS */
+@media (max-width: 767px) {
+    /* Mantem os cards legiveis no mobile */
+    .elementor-111 .elementor-element.elementor-element-768b70a {
+        --e-con-grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .elementor-111 .elementor-element.elementor-element-c834829,
+    .elementor-111 .elementor-element.elementor-element-885e21f,
+    .elementor-111 .elementor-element.elementor-element-fa1fe44 {
+        width: 100%;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 /* Start custom CSS for container, class: .elementor-element-386d1bf4 */
 .bloqueio-direito {
     user-select: none;
