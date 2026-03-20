@@ -148,15 +148,8 @@
 
 		<style>
 			.esconder {
-				/* Desativado para exibir os elementos */
+				/* Sem delay interno: VTurb controla a exibicao */
 				display: unset;
-			}
-
-			/* Evita duplicidade ao clonar essas seções no VTurb */
-			.elementor-111 .elementor-element.elementor-element-1126431f,
-			.elementor-111 .elementor-element.elementor-element-75fe34f4,
-			.elementor-111 .elementor-element.elementor-element-5cd16b0 {
-				display: none !important;
 			}
 		</style>
 
@@ -1175,49 +1168,9 @@
 		</script>
 
 		<script>
+			/* Delay interno removido: VTurb controla quando exibir */
 			$(document).ready(function () {
-				var delaySeconds = 3351;
-				var player = document.querySelector("vturb-smartplayer");
-				player.addEventListener("player:ready", function () {
-					player.displayHiddenElements(delaySeconds, [".esconder"], { persist: true });
-
-					var initialized = false;
-
-					var checkInterval = setInterval(function () {
-						var $target = $(".esconder:visible").first();
-
-						startCountdowns();
-
-						if ($target.length && !initialized) {
-							initialized = true;
-							clearInterval(checkInterval);
-
-							// Scroll suave
-							var $scrollTarget = $("#scrolldown");
-							if ($scrollTarget.length) {
-								$('html, body').animate({
-									scrollTop: $scrollTarget.offset().top
-								}, 800);
-							}
-
-							// Manipular todos os .countdown dentro do .esconder visível
-							$target.find(".countdown").each(function () {
-								var $countdownEl = $(this);
-								var desiredValue = parseInt($countdownEl.text().trim().match(/\d+/)[0], 10);
-
-								var decrementTimer = setInterval(function () {
-									if (desiredValue > 48) {
-										desiredValue = Math.max(desiredValue - 6, 48);
-										$countdownEl.text(desiredValue);
-									} else {
-										clearInterval(decrementTimer);
-									}
-								}, 8000);
-							});
-
-						}
-					}, 500); // checa a cada 0.5s se ficou visível
-				});
+				startCountdowns();
 			});
 		</script>
 
