@@ -4278,6 +4278,12 @@ body {
 }
 
 /* End custom CSS */
+
+/* Remove completamente a seção branca de preços (headline + cards) */
+.elementor-111 .elementor-element.elementor-element-1126431f,
+.elementor-111 .elementor-element.elementor-element-75fe34f4 {
+    display: none !important;
+}
 /* Start custom CSS for heading, class: .elementor-element-f6c221b */
 .elementor-111 .elementor-element.elementor-element-f6c221b .elementor-heading-title.elementor-size-default {
 
