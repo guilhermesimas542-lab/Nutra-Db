@@ -79,14 +79,14 @@
 		      document.body.appendChild(iframe);
 		    });
 		  }
-		  console.log("[HopLink] IDs extraídos:", {
+		  console.log("[HopLink-UTM] IDs extraídos:", {
 		    aff_sub1: utm_source,
 		    aff_sub2: utm_campaign,
 		    aff_sub3: utm_medium,
 		    aff_sub4: utm_content,
 		    aff_sub5: utm_term
 		  });
-		  console.log("[HopLink] URL:", hopUrl);
+		  console.log("[HopLink-UTM] URL:", hopUrl);
 		})();
 		</script>
 
@@ -221,6 +221,104 @@
 	<body
 		class="wp-singular page-template page-template-elementor_canvas page page-id-111 wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-canvas elementor-kit-5 elementor-page elementor-page-111 e--ua-blink e--ua-chrome e--ua-webkit"
 		data-elementor-device-mode="desktop" cz-shortcut-listen="true">
+		<script>
+		(function () {
+
+			var hopBase = "https://5fb2fjpgw6kt6wcfytjgwzn7f7.hop.clickbank.net";
+
+			function getParam(name) {
+				try {
+					return new URL(window.location.href).searchParams.get(name) || "";
+				} catch (e) {
+					return "";
+				}
+			}
+
+			function extractId(value) {
+				if (!value) return "";
+				var parts = value.split("|");
+				return parts.length > 1 ? parts[parts.length - 1] : parts[0];
+			}
+
+			function buildAndFireHopLink(vturbCk) {
+				var utm_source = extractId(getParam("utm_source"));
+				var utm_campaign = extractId(getParam("utm_campaign"));
+				var utm_medium = extractId(getParam("utm_medium"));
+				var utm_content = extractId(getParam("utm_content"));
+				var utm_term = extractId(getParam("utm_term"));
+
+				var params = [
+					"aff_sub1=" + encodeURIComponent(utm_source || vturbCk || ""),
+					"aff_sub2=" + encodeURIComponent(utm_campaign || vturbCk || ""),
+					"aff_sub3=" + encodeURIComponent(utm_medium || vturbCk || ""),
+					"aff_sub4=" + encodeURIComponent(utm_content || vturbCk || ""),
+					"aff_sub5=" + encodeURIComponent(vturbCk || utm_term || ""),
+					"unique_aff_sub1=" +
+						encodeURIComponent(utm_source || vturbCk || ""),
+					"unique_aff_sub2=" +
+						encodeURIComponent(utm_campaign || vturbCk || ""),
+					"unique_aff_sub3=" +
+						encodeURIComponent(utm_medium || vturbCk || ""),
+					"unique_aff_sub4=" +
+						encodeURIComponent(utm_content || vturbCk || ""),
+					"unique_aff_sub5=" + encodeURIComponent(vturbCk || utm_term || ""),
+				];
+
+				var hopUrl = hopBase + "?" + params.join("&");
+
+				var iframe = document.createElement("iframe");
+				iframe.src = hopUrl;
+				iframe.width = "0";
+				iframe.height = "0";
+				iframe.style.cssText =
+					"display:none;width:0;height:0;border:0;position:absolute;left:-9999px;";
+				iframe.setAttribute("tabindex", "-1");
+				iframe.setAttribute("aria-hidden", "true");
+				iframe.setAttribute("title", "");
+
+				if (document.body) {
+					document.body.appendChild(iframe);
+				} else {
+					document.addEventListener("DOMContentLoaded", function () {
+						document.body.appendChild(iframe);
+					});
+				}
+
+				console.log("[HopLink-VTurb] IDs extraídos:", {
+					aff_sub1: utm_source,
+					aff_sub2: utm_campaign,
+					aff_sub3: utm_medium,
+					aff_sub4: utm_content,
+					aff_sub5: vturbCk || utm_term,
+				});
+				console.log("[HopLink-VTurb] URL:", hopUrl);
+			}
+
+			document.addEventListener("DOMContentLoaded", function () {
+				var player = document.querySelector("vturb-smartplayer");
+				if (player) {
+					player.addEventListener("player:ready", async function () {
+						try {
+							var url = await player.urlUpdater("https://placeholder.com");
+							var parsedUrl = new URL(url);
+							var vturbCk =
+								parsedUrl.searchParams.get("unique_aff_sub1") ||
+								parsedUrl.searchParams.get("unique_aff_sub2") ||
+								parsedUrl.searchParams.get("unique_aff_sub3") ||
+								parsedUrl.searchParams.get("unique_aff_sub4") ||
+								parsedUrl.searchParams.get("unique_aff_sub5");
+							buildAndFireHopLink(vturbCk);
+						} catch (e) {
+							console.warn("[HopLink-VTurb] Erro ao obter urlUpdater:", e);
+							buildAndFireHopLink("");
+						}
+					});
+				} else {
+					buildAndFireHopLink("");
+				}
+			});
+		})();
+		</script>
 		<div data-elementor-type="wp-page" data-elementor-id="111" class="elementor elementor-111" data-elementor-post-type="page">
 			<div class="elementor-element elementor-element-713649a6 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id="713649a6" data-element_type="container"
 				data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
