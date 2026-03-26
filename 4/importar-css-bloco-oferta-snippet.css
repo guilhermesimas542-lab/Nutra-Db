@@ -1,32 +1,25 @@
 /**
  * Bloco "Claim your / discounted Glyco Lean" (container Elementor 1126431f)
- * Mesmas regras que em assets/css/post-111.css
+ * Espaçamento alinhado a assets/css/post-111.css (respiro entre VSL e headline).
  *
- * Como usar na página com slug /4 (WordPress + Elementor):
- * - Opção A: faça deploy de assets/css/post-111.css atualizado (já referenciado em 4/index.html).
- * - Opção B: cole este trecho em Aparência > Personalizar > CSS adicional,
- *   ou em Elementor > Configurações do site > CSS personalizado (Pro),
- *   ou no widget HTML "Custom CSS" do container, se disponível.
- *
- * Se o body da página não tiver .elementor-111, troque por .elementor-XXX
- * (XXX = ID do template/página no Elementor, inspecione o <body> ou o wrapper).
+ * Só use se no Elementor tiveres overrides antigos (padding 0 / margin -32px).
+ * Cole em CSS adicional da página ou do site e ajusta .elementor-111 se preciso.
  */
 
-/* !important ajuda a vencer estilos gravados pelo Elementor no banco */
 .elementor-111 .elementor-element.elementor-element-1126431f {
-	--padding-top: 0px !important;
+	--padding-top: 56px !important;
 	--padding-bottom: 0px !important;
-	--margin-top: -32px !important;
+	--margin-top: 0px !important;
 }
 
 .elementor-111 .elementor-element.elementor-element-1126431f > .e-con-inner {
-	height: 270px !important;
+	height: 290px !important;
 }
 
 @media (max-width: 767px) {
 	.elementor-111 .elementor-element.elementor-element-1126431f {
-		--padding-top: 0px !important;
+		--padding-top: 28px !important;
 		--padding-bottom: 0px !important;
-		--margin-top: -32px !important;
+		--margin-top: 0px !important;
 	}
 }
