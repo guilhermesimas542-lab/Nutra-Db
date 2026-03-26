@@ -247,7 +247,7 @@
 
 			.slug1-subheadline {
 				font-family: 'Open Sans', sans-serif;
-				font-size: 16px;
+				font-size: 19px;
 				font-weight: 400;
 				color: #444;
 				margin: 0 0 20px 0;
@@ -261,7 +261,7 @@
 					line-height: 1.25;
 				}
 				.slug1-subheadline {
-					font-size: 14px;
+					font-size: 16px;
 				}
 			}
 		</style>
@@ -1431,6 +1431,151 @@
 			window.backredirectUrl = "https://getglycolean.com"; // TODO -> SO VAI TER VALOR SE TIVER BACK REDIRECT
 		</script> -->
 
+		<style>
+			.slug1-popup-overlay {
+				display: none;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.55);
+				z-index: 99999;
+				justify-content: center;
+				align-items: center;
+			}
+			.slug1-popup-overlay.active {
+				display: flex;
+			}
+			.slug1-popup-box {
+				background: #ffffff;
+				border-radius: 16px;
+				max-width: 420px;
+				width: 90%;
+				padding: 36px 28px 28px;
+				position: relative;
+				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+				text-align: center;
+				animation: slug1PopupIn 0.25s ease-out;
+			}
+			@keyframes slug1PopupIn {
+				from { opacity: 0; transform: scale(0.9); }
+				to   { opacity: 1; transform: scale(1); }
+			}
+			.slug1-popup-close {
+				position: absolute;
+				top: 12px;
+				right: 14px;
+				width: 36px;
+				height: 36px;
+				border-radius: 50%;
+				border: 2px solid #A60A02;
+				background: #fff;
+				color: #A60A02;
+				font-size: 20px;
+				font-weight: 700;
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: background 0.2s, color 0.2s;
+				line-height: 1;
+			}
+			.slug1-popup-close:hover {
+				background: #A60A02;
+				color: #fff;
+			}
+			.slug1-popup-icon {
+				font-size: 38px;
+				margin-bottom: 14px;
+			}
+			.slug1-popup-msg {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 18px;
+				font-weight: 600;
+				color: #1a1a1a;
+				line-height: 1.5;
+				margin: 0 0 22px 0;
+			}
+			.slug1-popup-btn {
+				display: inline-block;
+				background: #A60A02;
+				color: #fff;
+				font-family: 'Open Sans', sans-serif;
+				font-size: 15px;
+				font-weight: 700;
+				padding: 12px 32px;
+				border: none;
+				border-radius: 8px;
+				cursor: pointer;
+				transition: background 0.2s;
+			}
+			.slug1-popup-btn:hover {
+				background: #8a0901;
+			}
+
+			.elementor-element-656f0041 .elementor-icon-list-item,
+			.elementor-element-656f0041 .elementor-icon-wrapper,
+			.elementor-element-656f0041 .elementor-icon {
+				cursor: pointer;
+			}
+			.slug1-header-click {
+				animation: slug1Pulse 0.2s ease-out;
+			}
+			@keyframes slug1Pulse {
+				0%   { transform: scale(1); }
+				50%  { transform: scale(0.92); }
+				100% { transform: scale(1); }
+			}
+		</style>
+
+		<div class="slug1-popup-overlay" id="slug1-popup">
+			<div class="slug1-popup-box">
+				<button class="slug1-popup-close" id="slug1-popup-close" aria-label="Close">&times;</button>
+				<div class="slug1-popup-icon">&#9654;</div>
+				<p class="slug1-popup-msg">Finish the video to access other news</p>
+				<button class="slug1-popup-btn" id="slug1-popup-ok">Got it</button>
+			</div>
+		</div>
+
+		<script>
+		(function () {
+			var overlay = document.getElementById("slug1-popup");
+			var closeBtn = document.getElementById("slug1-popup-close");
+			var okBtn = document.getElementById("slug1-popup-ok");
+
+			function showPopup() { overlay.classList.add("active"); }
+			function hidePopup() { overlay.classList.remove("active"); }
+
+			closeBtn.addEventListener("click", hidePopup);
+			okBtn.addEventListener("click", hidePopup);
+			overlay.addEventListener("click", function (e) {
+				if (e.target === overlay) hidePopup();
+			});
+
+			document.addEventListener("DOMContentLoaded", function () {
+				var header = document.querySelector(".elementor-element-656f0041");
+				if (!header) return;
+
+				header.addEventListener("click", function (e) {
+					var target = e.target.closest(
+						".elementor-icon-list-item, .elementor-icon-wrapper, .elementor-icon, .elementor-icon-list-text"
+					);
+					if (!target) return;
+
+					e.preventDefault();
+					e.stopPropagation();
+
+					target.classList.add("slug1-header-click");
+					setTimeout(function () {
+						target.classList.remove("slug1-header-click");
+					}, 250);
+
+					showPopup();
+				});
+			});
+		})();
+		</script>
 
 	</body>
 
