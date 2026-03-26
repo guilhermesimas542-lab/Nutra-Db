@@ -307,7 +307,8 @@
     --padding-bottom: 40px;
     --padding-left: 10px;
     --padding-right: 10px;
-    --z-index: 2;
+    --margin-top: -8px;
+    --z-index: 3;
 }
 
 .elementor-111 .elementor-element.elementor-element-75fe34f4:not(.elementor-motion-effects-element-type-background), .elementor-111 .elementor-element.elementor-element-75fe34f4>.elementor-motion-effects-container>.elementor-motion-effects-layer {
@@ -2708,6 +2709,7 @@
         --padding-bottom: 60px;
         --padding-left: 19px;
         --padding-right: 10px;
+        --margin-top: -12px;
     }
 
     .elementor-111 .elementor-element.elementor-element-768b70a {
@@ -3346,6 +3348,7 @@
         --padding-bottom: 30px;
         --padding-left: 5px;
         --padding-right: 5px;
+        --margin-top: -18px;
     }
 
     .elementor-111 .elementor-element.elementor-element-768b70a {
