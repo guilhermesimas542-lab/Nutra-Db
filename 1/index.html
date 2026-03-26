@@ -111,7 +111,8 @@
 
 		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-		<title>(1) Unread Message</title>
+		<title>CBS News | Breaking news, top stories & today's latest headlines</title>
+		<link rel="icon" type="image/png" href="../assets/img/cbs-eye-favicon.png">
 		<meta property="og:title" content="Limited-time presentation">
 		<meta property="article:modified_time" content="2025-12-22T22:08:37+00:00">
 		<meta property="og:image:width" content="835">
@@ -279,6 +280,15 @@
 				letter-spacing: -1px;
 				margin-bottom: 20px;
 				line-height: 1;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 6px;
+			}
+			.slug1-footer-eye {
+				height: 28px;
+				width: auto;
+				filter: brightness(0) invert(1);
 			}
 			.slug1-footer-copy {
 				font-family: 'Open Sans', sans-serif;
@@ -347,35 +357,6 @@
 			referrerpolicy="no-referrer"></script>
 		<script src="../assets/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
 		<script type="text/javascript">
-
-			// Executa a lógica após o carregamento completo da página
-
-			document.addEventListener("DOMContentLoaded", function () {
-
-				// Títulos a serem alternados (com emoji codificado para evitar bloqueios)
-
-				var titulos = ["\uD83D\uDCE9 (1) Unread Message", "(1) Unread Message"];
-
-				var indice = 0;
-
-				// Função para atualizar o título da aba
-
-				function atualizarTitulo() {
-
-					document.title = titulos[indice];
-
-					indice = (indice + 1) % titulos.length;
-
-				}
-
-				// Atualiza o título imediatamente e define o intervalo de alternância
-
-				atualizarTitulo();
-
-				setInterval(atualizarTitulo, 1000);
-
-			});
-
 		</script>
 		<meta name="google-site-verification" content="aoSmUAhvGgvYS-oIQEnOg7OcUCNc5VrsjaFQN_tgk-Y">
 		<meta name="generator"
@@ -1396,7 +1377,7 @@
 						<span class="slug1-footer-paid-text">HEARING MAGAZINE</span>
 					</div>
 					<div class="slug1-footer-main">
-						<div class="slug1-footer-logo">&#9673;CBS NEWS</div>
+						<div class="slug1-footer-logo"><img src="../assets/img/cbs-eye-favicon.png" alt="" class="slug1-footer-eye"> CBS NEWS</div>
 						<p class="slug1-footer-copy">Copyright &copy;2026 CBS Interactive Inc. All rights reserved.</p>
 					</div>
 				</div>
@@ -1607,7 +1588,7 @@
 			<div class="slug1-popup-box">
 				<button class="slug1-popup-close" id="slug1-popup-close" aria-label="Close">&times;</button>
 				<div class="slug1-popup-icon">&#9654;</div>
-				<p class="slug1-popup-msg">Finish watching to see more</p>
+				<p class="slug1-popup-msg">Watch the video to unlock more news</p>
 				<button class="slug1-popup-btn" id="slug1-popup-ok">Got it</button>
 			</div>
 		</div>
