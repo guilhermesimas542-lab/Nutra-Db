@@ -150,7 +150,7 @@
 
 		<style>
 			.esconder {
-				/* VTurb controla exibicao; inicia escondido */
+				/* Oculto até o script revelar oferta (delay); não usar bloco de oferta no HTML do VTurb */
 				display: none;
 			}
 		</style>
@@ -1431,9 +1431,18 @@
 		</script>
 
 		<script>
-			/* Delay interno removido: VTurb controla quando exibir */
-			$(document).ready(function () {
+			/* Tempo até mostrar headline + cards (2/3/6) + garantia na própria página (segundos). */
+			var OFERTA_DELAY_SEGUNDOS = 10; /* só /teste: delay curto para testes */
+
+			function revelarBlocoOferta() {
+				document.querySelectorAll(".esconder").forEach(function (el) {
+					el.classList.remove("esconder");
+				});
 				startCountdowns();
+			}
+
+			$(document).ready(function () {
+				setTimeout(revelarBlocoOferta, OFERTA_DELAY_SEGUNDOS * 1000);
 			});
 		</script>
 
