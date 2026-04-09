@@ -1,0 +1,72 @@
+    @theme {
+        --font-sans: "Poppins", sans-serif;
+        --font-serif: "Open Sans", serif;
+        --font-nunito: "Nunito Sans", sans-serif;
+
+        --color-primary: #78aed0;
+        --color-primary-dark: #17b2de;
+        --color-primary-light: #0973b5;
+        --color-primary-show: #b23d46;
+
+        --text-5xl: 42px;
+    }
+
+    @keyframes rotateP {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        50% {
+            transform: rotate(180deg);
+        }
+
+        100% {
+            transform: rotate(180deg);
+        }
+    }
+
+    @keyframes scale {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.05);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .hourglass {
+        display: inline-block;
+        vertical-align: middle;
+        animation: rotateP 2.5s ease-in-out forwards infinite;
+        max-width: 25px;
+        filter: invert(1);
+    }
+
+    .esconder,
+    .esconder2 {
+        /* display: none;  */
+    }
+
+    /* Header helpers */
+    .cnn-menu summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .cnn-menu summary {
+        list-style: none;
+    }
+
+    marquee {
+        background-color: #FD1300;
+        color: white;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 4px 0;
+        font-weight: 400;
+        font-size: 11px;
+    }

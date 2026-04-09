@@ -1,0 +1,25 @@
+/**
+ * Bloco "Claim your / discounted Glyco Lean" (container Elementor 1126431f)
+ * Espaçamento alinhado a assets/css/post-111.css (respiro entre VSL e headline).
+ *
+ * Só use se no Elementor tiveres overrides antigos (padding 0 / margin -32px).
+ * Cole em CSS adicional da página ou do site e ajusta .elementor-111 se preciso.
+ */
+
+.elementor-111 .elementor-element.elementor-element-1126431f {
+	--padding-top: 56px !important;
+	--padding-bottom: 0px !important;
+	--margin-top: 0px !important;
+}
+
+.elementor-111 .elementor-element.elementor-element-1126431f > .e-con-inner {
+	height: 290px !important;
+}
+
+@media (max-width: 767px) {
+	.elementor-111 .elementor-element.elementor-element-1126431f {
+		--padding-top: 28px !important;
+		--padding-bottom: 0px !important;
+		--margin-top: 0px !important;
+	}
+}
