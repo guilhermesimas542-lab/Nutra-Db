@@ -335,6 +335,15 @@
 				color: #1a1a1a;
 				margin: 0 0 12px 0;
 				text-align: left;
+				overflow-x: auto;
+				-webkit-overflow-scrolling: touch;
+			}
+
+			/* Uma linha visual por bloco (evita quebra extra dentro de cada frase entre <br>) */
+			.slug1-headline .slug1-headline-line {
+				display: block;
+				text-align: center;
+				white-space: nowrap;
 			}
 
 			.slug1-subheadline {
@@ -354,6 +363,12 @@
 				}
 				.slug1-subheadline {
 					font-size: 16px;
+				}
+			}
+
+			@media (max-width: 380px) {
+				.slug1-headline .slug1-headline-line {
+					white-space: normal;
 				}
 			}
 
@@ -584,10 +599,12 @@
 						</div>
 					</div>
 					<div class="elementor-element elementor-element-43a4578e e-con-full e-flex e-con e-child" data-id="43a4578e" data-element_type="container">
-						<h2 class="slug1-headline" style="text-align: center; line-height: 1.45;">In an video, expert in brain<br>
-							Health Reveals: &ldquo;evil Protein&rdquo;<br>
-							Is Literal <span style="color:#c21321;">KILLING</span> <span style="color:#c21321;">the</span> <span style="color:#c21321;">Memory</span><br>
-							Of 200 Million Americans</h2>
+						<h2 class="slug1-headline" style="text-align: center; line-height: 1.45;">
+							<span class="slug1-headline-line">In an video, expert in brain</span>
+							<span class="slug1-headline-line">Health Reveals: &ldquo;evil Protein&rdquo;</span>
+							<span class="slug1-headline-line">Is Literal <span style="color:#c21321;">KILLING</span> <span style="color:#c21321;">the</span> <span style="color:#c21321;">Memory</span></span>
+							<span class="slug1-headline-line">Of 200 Million Americans</span>
+						</h2>
 						<p class="slug1-subheadline" style="text-align: center;">(Watch How to solve it below!)</p>
 					</div>
 					<div class="elementor-element elementor-element-2a5b8403 e-con-full e-flex e-con e-child" data-id="2a5b8403" data-element_type="container">
